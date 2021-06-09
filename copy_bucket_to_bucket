@@ -1,6 +1,6 @@
 
 
-//when the file upload in the one s3_ bucket then  it automaticall update in the another bucket//
+//when the file upload in the one s3_ bucket then  it automaticall update in the another bucket----- in python//
 
 
 import boto3
