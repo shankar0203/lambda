@@ -27,3 +27,8 @@ def lambda_handler(event, context):
     print('started your instances: ' + str(instances))
     
  -------------------------------------------------------------------------------------------------
+ 
+ 
+ configure with cloud watch we can shedule our instance to satart and stop our instances
+ by using the cron expression
+ 
