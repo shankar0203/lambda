@@ -1,0 +1,29 @@
+Automatically start and stop the ec2_instances inall regions
+
+
+-----------------------------------------------------------------------------------
+///stop the ec2_instances///
+
+import boto3
+region = 'us-east-1'   -----------------(region)
+instances = ['i-0630eff034487a8ff']    --------------(instance _id)
+ec2 = boto3.client('ec2', region_name=region)
+
+def lambda_handler(event, context):
+    ec2.stop_instances(InstanceIds=instances)
+    print('stopped your instances: ' + str(instances))
+    
+ ------------------------------------------------------------------------------------------   
+///start the ec2_instances////
+
+
+import boto3
+region = 'us-east-1'      -----------------(region)
+instances = ['i-0630eff034487a8ff']         --------------(instance _id)
+ec2 = boto3.client('ec2', region_name=region)
+
+def lambda_handler(event, context):
+    ec2.start_instances(InstanceIds=instances)
+    print('started your instances: ' + str(instances))
+    
+ -------------------------------------------------------------------------------------------------
