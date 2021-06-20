@@ -1,0 +1,27 @@
+
+
+create the sns topic for some trigger occur
+-----------------------------------------------
+import json
+import boto3
+client = boto3.client('sns')
+
+def lambda_handler(event, context):
+    client.publish ( TargetArn='arn:aws:sns:us-east-1:484479102124:shankar_ec2_status', Message='status of ec2_instances')
+
+-------------------------------------------------------------------------
+
+steps:
+* first create IAM role which consist of permisssion like
+- SNS
+- which service we want configure
+- lambda basic execution permission
+
+* then go create topic for SNS in that select based on the format you want get the notification
+* fetch the code into lambda
+
+STEPS FOR TRIGER THE SNS FOR EC2 INSTANCE STATUS
+---------------------------------------------------
+* follow the same process we alreadsone for this also
+* in lambda secction go to ADD TRIGGER   ---NAME---DESCRIPTION--EVENT PATTEN----EC2 INSTANCES 
+* under details---STATE CHANGE--STATE(START/STOP/TERMINATEDD)  ----- instances (particular instance _id)
